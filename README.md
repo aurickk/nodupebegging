@@ -2,4 +2,4 @@
 
 any dupes for donutsmp?
 
-https://nodupebegging.con
+https://nodupebegging.com
