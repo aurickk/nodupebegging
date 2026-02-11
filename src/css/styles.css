@@ -216,10 +216,11 @@ footer,
 }
 
 h1.name {
-  font-size: 94px;
+  font-size: 84px;
   font-weight: 700;
   display: inline-block;
   text-decoration-color: #fff;
+  white-space: nowrap;
 }
 
 #strike {
@@ -281,6 +282,27 @@ h1.name {
   margin-right: 0;
 }
 
+/* When example is on the right side, align it right */
+.sectionright .list-card.example {
+  margin-left: auto;
+  margin-right: 0;
+  width: 360px;
+}
+
+.sectionright .section-title {
+  text-align: right;
+  margin-right: 0;
+}
+
+/* Reversed layout: text on left (wider), example on right (narrower) */
+.container.reversed .sectionleft {
+  width: 59%;
+}
+
+.container.reversed .sectionright {
+  width: 40%;
+}
+
 .list-card .exp,
 .list-card div {
   display: inline-block;
@@ -314,7 +336,7 @@ h1.name {
 }
 
 .list-card div p:first-of-type {
-  margin-top: 55px;
+  margin-top: 0;
 }
 
 .container ul {
@@ -363,7 +385,7 @@ h1.name {
 .slack img {
   width: 42px;
   height: 42px;
-  border-radius: 5px;
+  border-radius: 50%;
   float: left;
   margin-right: 10px;
 }

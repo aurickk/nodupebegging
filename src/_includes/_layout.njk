@@ -1,6 +1,6 @@
 <!doctype html>
-<html lang="{{ lang }}" dir="{{ langDir }}">
-  {% set fullTitle = [_(title), 'no hello'] | select() | join(' - ') %}
+<html lang="en" dir="ltr">
+  {% set fullTitle = [title, 'no dupe begging'] | select() | join(' - ') %}
   <head>
     <title>{{ fullTitle }}</title>
     <link rel="stylesheet" type="text/css" href="/css/styles.css" />
@@ -8,14 +8,14 @@
     <meta charset="UTF-8" />
     <!-- primary meta -->
     <meta name="title" content="{{ fullTitle }}" />
-    <meta name="description" content="{{ _("header.subtitle") }}" />
+    <meta name="description" content="stop fucking asking for dupes you retard" />
     <!-- opengraph/facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="{{ site.root }}/" />
     <meta property="og:title" content="{{ fullTitle }}" />
     <meta
       property="og:description"
-      content="{{ _("header.subtitle") }}"
+      content="stop fucking asking for dupes in you retard"
     />
     <meta property="og:image" content="{{ site.root }}{%- imageURL "./src/img/newmeta.png", { format: "webp" } -%}" />
     <!-- twitter -->
@@ -24,18 +24,13 @@
     <meta property="twitter:title" content="{{ fullTitle }}" />
     <meta
       property="twitter:description"
-      content="{{ _("header.subtitle") }}"
+      content="stop fucking asking for dupes you retard"
     />
     <meta property="twitter:image" content="{{ site.root }}{%- imageURL "./src/img/newmeta.png", { format: "webp" } -%}" />
     <!-- icons -->
     <link rel="apple-touch-icon" href="{%- imageURL "./src/img/apple-touch-icon.png", { format: "webp" } -%}" />
     <link rel="shortcut icon" href="{%- imageURL "./src/img/favicon.png", { format: "webp" } -%}" type="image/x-icon" />
     <link rel="icon" href="{%- imageURL "./src/img/favicon.png", { format: "webp" } -%}" type="image/x-icon" />
-
-    {% for locale in locales %}
-    <link rel="alternate" hreflang="{{ locale.path }}" href="{{ site.root }}{% relocalizePath locale.path, page.url %}" />
-    {% endfor %}
-    <link rel="alternate" hreflang="x-default" href="{{ site.root }}/" />
   </head>
   <body>
     {{ content | safe }}

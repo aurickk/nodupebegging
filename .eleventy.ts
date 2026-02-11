@@ -1,5 +1,4 @@
-import i18n from './src/util/i18n';
-import Image from '@11ty/eleventy-img';
+const Image = require('@11ty/eleventy-img');
 
 const imagify = async (src, options = {}) => {
   const defaults = {
@@ -14,14 +13,6 @@ const imagify = async (src, options = {}) => {
 module.exports = (eleventyConfig) => {
   eleventyConfig.addPassthroughCopy('src/css');
   eleventyConfig.addPassthroughCopy('src/js');
-
-  eleventyConfig.addPlugin(i18n, {
-    localesDirectory: 'locales',
-    parserMode: 'po',
-    javascriptMessages: 'messages.js',
-    tokenFilePatterns: ['src/**/*.njk', 'src/**/*.js'],
-    localeRegex: /^(?<lang>.{2})(?:-(?<country>.{2}))*$/,
-  });
 
   if (eleventyConfig.setNunjucksEnvironmentOptions) {
     eleventyConfig.setNunjucksEnvironmentOptions({
